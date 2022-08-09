@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>  
+  <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script> 
+  <style>
+    .div1{
+        background-color: red;
+        color: blue;
+        height: 200px;
+        width: 200px;
+        float: left;
+        font-family: cursive;
+
+    }
+    .div2{
+        background-color: rgb(125, 45, 136);
+        color: rgb(155, 190, 58);
+        height: 200px;
+        width: 200px;
+        float: left;
+        margin-left: 25px;
+        font-family: cursive;
+
+    }
+    .firangi{
+        background-color: blueviolet;
+        height: 500px;
+        width: 500px;
+        font-family: cursive;
+        color: coral;
+    }
+    
+    
+  </style>
+</head>
+ 
+<body>
+    <div class="div1"><p>hello</p></div>
+    <div class="div2"><p>everyone</p></div>
+    
+</body>
+<script>
+    $(document).ready(function(){
+        $(".div1").draggable();
+
+        $(".div2").droppable({
+
+            accept: ".div1" ,
+            drop : function(event,ui){
+                $(this).addClass("firangi").find("p").html("dragging done firangi");
+            }
+        });
+    
+});
+</script>
+</html>
